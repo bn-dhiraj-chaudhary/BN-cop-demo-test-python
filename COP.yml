@@ -1,0 +1,22 @@
+# Coverity on Polaris (COP) capture/analyze configuration for cop-test-python.
+# Python is buildless for Coverity capture, so no build/clean commands are required.
+capture:
+  files:
+    exclude-regex: (\.venv|__pycache__|\.git)/.*
+  languages:
+    include: [python]
+analyze:
+  mode: central
+  coverity:
+    cov-analyze:
+      - "--webapp-security"
+      - "--security"
+      - "--enable"
+      - "HARDCODED_CREDENTIALS"
+      - "--enable"
+      - "SQLI"
+      - "--enable"
+      - "OS_CMD_INJECTION"
+install:
+  coverity:
+    version: default
