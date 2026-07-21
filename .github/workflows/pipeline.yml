@@ -33,6 +33,14 @@ jobs:
       # This repo keeps the config as COP.yml so it's easy to spot in this test harness;
       # copy it into place before invoking the CLI.
 
+      - name: Black Duck Polaris Scan
+        uses: blackduck-inc/black-duck-security-scan@v2
+        with:
+          polaris_server_url: ${{ vars.POLARIS_SERVER_URL }}
+          polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
+          polaris_assessment_types: "SAST,SCA"
+          polaris_application_name: "Python-Demo"
+          polaris_project_name: "bn-dhiraj-chaudhary/BN-cop-demo-test-python"
       - name: Resolve target server/token
         id: target
         run: |
