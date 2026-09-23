@@ -1,0 +1,13 @@
+capture:
+  files:
+    exclude-regex: '((node_modules|\.git)/.*)'
+analyze:
+  cov-analyze-args:
+    - '--webapp-security'
+    - '--security'
+    - '--enable'
+    - 'HARDCODED_CREDENTIALS'
+    - '--enable'
+    - 'SQLI'
+    - '--enable'
+    - 'OS_CMD_INJECTION'
