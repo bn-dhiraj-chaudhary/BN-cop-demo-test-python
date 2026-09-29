@@ -1,0 +1,13 @@
+capture:
+analyze:
+  cov-analyze-args:
+    - '--aggressiveness-level'
+    - 'high'
+    - '--all'
+    - '--rule'
+    - '--security'
+    - '--webapp-security'
+    - '--webapp-security-aggressiveness-level'
+    - 'high'
+    - '--distrust-all'
+    - '--enable-audit-mode'
